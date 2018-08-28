@@ -2,3 +2,5 @@ Documentation:
  Enabled: false
 LibeLiength:
  Max: 99
+Style/FrozenStringLiteralComment:
+ Enabled: false
