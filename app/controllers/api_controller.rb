@@ -8,6 +8,11 @@ class ApiController < ApplicationController
     @current_user ||= authentication_manager.current_user
   end
 
+  def authenticate_request
+    data = authentication_manager.authenticate_request
+    format_authentication_data(data)
+  end
+
   private
 
   # Serializer methods
@@ -17,11 +22,6 @@ class ApiController < ApplicationController
 
   def authentication_manager
     @authentication_manager ||= AuthenticationManager.new(request.headers)
-  end
-
-  def authenticate_request
-    data = authentication_manager.authenticate_request
-    format_authentication_data(data)
   end
 
   # This is a before action method. Returns false to stop from executing the other
