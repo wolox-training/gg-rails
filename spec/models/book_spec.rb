@@ -3,27 +3,15 @@ require 'rails_helper'
 describe Book do
   subject(:book) { build(:book) }
 
-  it do
-    should validate_presence_of(:genre)
-  end
+  it { should validate_presence_of(:genre) }
 
-  it do
-    should validate_presence_of(:author)
-  end
+  it { should validate_presence_of(:author) }
 
-  it do
-    should validate_presence_of(:image)
-  end
+  it { should validate_presence_of(:image) }
 
-  it do
-    should validate_presence_of(:title)
-  end
+  it { should validate_presence_of(:title) }
 
-  it do
-    should validate_presence_of(:publisher)
-  end
+  it { should validate_presence_of(:publisher) }
 
-  it do
-    should validate_presence_of(:year)
-  end
+  it { should validate_presence_of(:year) }
 end
