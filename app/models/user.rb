@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   before_validation :generate_verification_code, on: :create
 
-  has_many :rents, dependent: :nullify
+  has_many :rents, dependent: :restrict_with_error
   def generate_verification_code
     self.verification_code = AuthenticableEntity.verification_code
   end
