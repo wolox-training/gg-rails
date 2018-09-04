@@ -1,14 +1,22 @@
 module Api
   module V1
     class BooksController < ApiController
-      include Wor::Paginate
       def index
         render_paginated Book
       end
 
       def show
-        @book = Book.find(params[:id])
-        render json: @book
+        render json: find_book
+      end
+
+      private
+
+      def find_book
+        Book.find(book_params)
+      end
+
+      def book_params
+        params.required(:id)
       end
     end
   end
