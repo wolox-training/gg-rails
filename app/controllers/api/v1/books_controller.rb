@@ -6,14 +6,10 @@ module Api
       end
 
       def show
-        render json: find_book
+        render json: Book.find(book_params)
       end
 
       private
-
-      def find_book
-        Book.find(book_params)
-      end
 
       def book_params
         params.required(:id)
