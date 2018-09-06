@@ -7,8 +7,11 @@ module Api
 
       def create
         rent = Rent.new(rent_params)
-        rent.save
-        render json: rent
+        if rent.save
+          render json: rent, status: :created
+        else
+          render json: rent.errors, status: :unprocessable_entity
+        end
       end
 
       private
