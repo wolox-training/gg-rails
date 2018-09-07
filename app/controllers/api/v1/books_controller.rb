@@ -2,11 +2,11 @@ module Api
   module V1
     class BooksController < ApiController
       def index
-        render_paginated Book, each_serializer: BookIndexSerializer
+        render_paginated Book, each_serializer: Book::IndexSerializer
       end
 
       def show
-        render json: Book.find(book_params), serializer: BookShowSerializer
+        render json: Book.find(book_params), serializer: Book::ShowSerializer
       end
 
       private

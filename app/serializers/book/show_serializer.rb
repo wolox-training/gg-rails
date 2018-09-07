@@ -1,8 +1,10 @@
-class BookShowSerializer < BookSerializer
-  attribute :image, key: :image_url
-  attribute :actual_rent
+class Book
+  class ShowSerializer < BookSerializer
+    attribute :image, key: :image_url
+    attribute :actual_rent
 
-  def actual_rent
-    Rent.where('book_id = ?', object.id).last
+    def actual_rent
+      object.rents.last
+    end
   end
 end
