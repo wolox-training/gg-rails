@@ -41,9 +41,16 @@ describe Api::V1::BooksController, type: :controller do
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
       end
+    end
+
+    context 'When fetching an inexistent book' do
+      let!(:book) { create(:book) }
+
+      before do
+        get :show, params: { id: book.id + 1 }
+      end
 
       it 'responds with 404 status' do
-        get :show, params: { id: book.id + 1 }
         expect(response).to have_http_status(:not_found)
       end
     end
