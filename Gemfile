@@ -53,6 +53,7 @@ group :development, :test do
   gem 'factory_bot', '~> 4.11.0'
   gem 'database_cleaner', '~> 1.7.0'
   gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'dotenv-rails', '~> 2.5.0'
 end
 
 group :development do
