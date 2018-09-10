@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@training.wolox.com.ar'
+  default from: 'gonzalo.gutierrez@wolox.com.ar'
   layout 'mailer'
 end
