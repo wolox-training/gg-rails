@@ -48,6 +48,6 @@ class ApiController < ApplicationController
   end
 
   def render_nothing_bad_req
-    head :bad_request
+    head :not_found
   end
 end
