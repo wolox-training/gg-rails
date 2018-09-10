@@ -38,6 +38,8 @@ gem 'devise', '~> 4.5.0'
 gem 'versionist', '~> 1.7.0'
 gem 'jwt', '~> 2.1.0'
 gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
+gem 'active_model_serializers', '~> 0.10.7'
+gem 'wor-paginate', '~> 0.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
