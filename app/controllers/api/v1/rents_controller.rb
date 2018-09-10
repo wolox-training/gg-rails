@@ -1,6 +1,7 @@
 module Api
   module V1
     class RentsController < ApiController
+      include Wor::Paginate
       def index
         render_paginated Rent
       end
@@ -8,6 +9,8 @@ module Api
       def create
         rent = Rent.new(rent_params)
         if rent.save
+          MailWorker.perform_async
+          UserMailer.new_rent.deliver_now
           render json: rent, status: :created
         else
           render json: rent.errors, status: :unprocessable_entity
