@@ -4,10 +4,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.new_rent.subject
   #
-  def new_rent(rent)
-    @rent = rent
-    @book = Book.find(rent.book_id)
-    user = User.find(rent.user_id)
+  def new_rent(rent_id)
+    @rent = Rent.find(rent_id)
+    @book = @rent.book
+    user = @rent.user
 
     mail to: user.email, subject: 'New rent created'
   end

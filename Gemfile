@@ -41,6 +41,7 @@ gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'wor-paginate', '~> 0.1.3'
 gem 'sidekiq', '~> 5.2.1'
+gem 'slim-rails', '~> 3.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
