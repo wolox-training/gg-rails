@@ -40,6 +40,8 @@ gem 'jwt', '~> 2.1.0'
 gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'wor-paginate', '~> 0.1.3'
+gem 'sidekiq', '~> 5.2.1'
+gem 'slim-rails', '~> 3.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +54,7 @@ group :development, :test do
   gem 'factory_bot', '~> 4.11.0'
   gem 'database_cleaner', '~> 1.7.0'
   gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'dotenv-rails', '~> 2.5.0'
 end
 
 group :development do
