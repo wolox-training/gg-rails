@@ -8,12 +8,12 @@ class UserMailer < ApplicationMailer
     @rent = Rent.find(rent_id)
     @book = @rent.book
     user = @rent.user
-    set_locale(user)
+    config_locale(user)
 
     mail to: user.email, subject: t('.subject')
   end
 
-  def set_locale(user)
+  def config_locale(user)
     I18n.locale = user.locale || I18n.default_locale
   end
 end
