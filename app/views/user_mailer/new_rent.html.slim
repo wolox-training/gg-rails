@@ -1,9 +1,9 @@
-h1 New rent created
+h1 #{t '.title'}
 p
-  | Creation date: #{@rent.created_at}
+  | #{t '.creation_date'}#{@rent.created_at}
 p
-  | Book: #{@book.title}
+  | #{t '.book'}#{@book.title}
 p
-  | From: #{@rent.from}
+  | #{t '.from'}#{@rent.from}
 p
-  | To: #{@rent.to}
+  | #{t '.to'}#{@rent.to}
