@@ -2,7 +2,3 @@ en:
   user_mailer:
     new_rent:
       title: "New rent created"
-      creation_date: "Creation date: "
-      book: "Book: "
-      from: "From: "
-      to: "To: "
