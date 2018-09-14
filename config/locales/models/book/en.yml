@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models:
+      book: 'Book'
+    attributes:
+      book:
+        genre: 'Genre'
+        author: 'Author'
+        image: 'Image'
+        title: 'Title'
+        publisher: 'Publisher'
+        year: 'Year'
+        created_at: 'Created at'

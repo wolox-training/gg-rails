@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      rent: 'Rent'
+    attributes:
+      rent:
+        user: 'User'
+        book: 'Book'
+        from: 'From'
+        to: 'To'
+        created_at: 'Created at'
