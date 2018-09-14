@@ -1,13 +1,13 @@
 es:
   activerecord:
     models:
-      book: 'Libro'
+      book: Libro
     attributes:
       book:
-        genre: 'Genero'
-        author: 'Autor'
-        image: 'Imagen'
-        title: 'Titulo'
-        publisher: 'Editor'
-        year: 'Año'
-        created_at: 'Fecha de creación'
+        genre: Genero
+        author: Autor
+        image: Imagen
+        title: Titulo
+        publisher: Editor
+        year: Año
+        created_at: Fecha de creación

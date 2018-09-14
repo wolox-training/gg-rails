@@ -1,4 +1,4 @@
 es:
   user_mailer:
     new_rent:
-      subject: "Nuevo alquiler"
+      subject: Nuevo alquiler

@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180911124400) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "verification_code", null: false
-    t.integer "locale"
+    t.integer "locale", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
