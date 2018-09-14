@@ -1,6 +1,7 @@
 class ApiController < ApplicationController
   rescue_from ActionController::ParameterMissing, with: :render_nothing_bad_req
   rescue_from ActiveRecord::RecordNotFound, with: :render_nothing_bad_req
+  rescue_from Pundit::NotAuthorizedError, with: :render_unauthorized
   protect_from_forgery with: :null_session
   before_action :current_user, :authenticate_request
 
@@ -49,5 +50,9 @@ class ApiController < ApplicationController
 
   def render_nothing_bad_req
     head :not_found
+  end
+
+  def render_unauthorized
+    head :unauthorized
   end
 end
