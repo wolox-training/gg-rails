@@ -1,9 +1,9 @@
 h1 #{t '.title'}
 p
-  | #{t Rent.human_attribute_name('created_at')}: #{@rent.created_at}
+  | #{Rent.human_attribute_name('created_at')}: #{@rent.created_at}
 p
-  | #{t Book.model_name.human}: #{@book.title}
+  | #{Book.model_name.human}: #{@book.title}
 p
-  | #{t Rent.human_attribute_name('from')}: #{@rent.from}
+  | #{Rent.human_attribute_name('from')}: #{@rent.from}
 p
-  | #{t Rent.human_attribute_name('to')}: #{@rent.to}
+  | #{Rent.human_attribute_name('to')}: #{@rent.to}

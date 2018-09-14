@@ -1,6 +1,6 @@
 <%= t '.title' %>
 
-<%= t Rent.human_attribute_name('created_at') %>: <%= @rent.created_at %>
-<%= t Book.model_name.human %>: <%= @book.title %>
-<%= t Rent.human_attribute_name('from') %>: <%= @rent.from %>
-<%= t Rent.human_attribute_name('to') %>: <%= @rent.to %>
+<%= Rent.human_attribute_name('created_at') %>: <%= @rent.created_at %>
+<%= Book.model_name.human %>: <%= @book.title %>
+<%= Rent.human_attribute_name('from') %>: <%= @rent.from %>
+<%= Rent.human_attribute_name('to') %>: <%= @rent.to %>
