@@ -5,7 +5,8 @@ LineLength:
 Style/FrozenStringLiteralComment:
  Enabled: false
 Metrics/BlockLength:
- Exclude:
+  ExcludedMethods: ['describe', 'context']
+  Exclude:
    - 'spec/**/*.rb'
 AllCops:
   Exclude:
