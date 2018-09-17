@@ -3,9 +3,9 @@ class CreateBookSuggestions < ActiveRecord::Migration[5.1]
     create_table :book_suggestions do |t|
       t.string :editorial
       t.float :price
-      t.string :author
-      t.string :title
-      t.string :link
+      t.string :author, null: false
+      t.string :title, null: false
+      t.string :link, null: false
       t.string :publisher
       t.string :year
       t.references :user, foreign_key: true
