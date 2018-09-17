@@ -1,0 +1,11 @@
+es:
+  activerecord:
+    models:
+      rent: Alquiler
+    attributes:
+      rent:
+        user: Usuario
+        book: Libro
+        from: Desde
+        to: Hasta
+        created_at: Fecha de creación

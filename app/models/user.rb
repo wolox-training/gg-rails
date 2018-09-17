@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum locale: { en: 0, es: 1 }, _prefix: :language
+
   before_validation :generate_verification_code, on: :create
 
   has_many :rents, dependent: :restrict_with_error
