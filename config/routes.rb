@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
@@ -20,5 +19,6 @@ Rails.application.routes.draw do
     end
 
     resources :books, only: [:index, :show]
+    resources :book_suggestions, only: [:create]
   end
 end
