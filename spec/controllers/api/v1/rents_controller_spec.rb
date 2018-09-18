@@ -26,13 +26,11 @@ describe Api::V1::RentsController do
   end
 
   describe 'POST #create' do
-    let(:from) { Faker::Date.backward(3) }
-    let(:to) { Faker::Date.forward(3) }
     let(:rent_params) do
-      { 'user_id' => user.id, 'book_id' => book.id, 'from' => from, 'to' => to }
+      attributes_for(:rent, 'user_id' => user.id, 'book_id' => book.id)
     end
     let(:other_rent_params) do
-      { 'user_id' => other_user.id, 'book_id' => book.id, 'from' => from, 'to' => to }
+      attributes_for(:rent, 'user_id' => other_user.id, 'book_id' => book.id)
     end
 
     context 'When create a rent' do
