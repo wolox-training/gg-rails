@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 describe Api::V1::BookSuggestionsController do
-  include_context 'Authenticated User'
-
   describe 'POST #create' do
     context 'When creating a valid book suggestion' do
-      let!(:book_suggestion_attributes) { attributes_for(:book_suggestion, user: user) }
+      let!(:book_suggestion_attributes) { attributes_for(:book_suggestion) }
       it 'creates a new book suggestion' do
         expect do
           post :create, params: { book_suggestion: book_suggestion_attributes }
