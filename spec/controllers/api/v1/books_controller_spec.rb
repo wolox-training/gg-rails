@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::V1::BooksController, type: :controller do
+describe Api::V1::BooksController do
   include_context 'Authenticated User'
 
   describe 'GET #index' do
@@ -12,10 +12,7 @@ describe Api::V1::BooksController, type: :controller do
       end
 
       it 'responses with the books json' do
-        expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
-        ).to_json
-        expect(response_body.to_json) =~ JSON.parse(expected)
+        expect(response_body['page'].pluck('id')).to eq books.pluck(:id)
       end
 
       it 'responds with 200 status' do
@@ -33,9 +30,7 @@ describe Api::V1::BooksController, type: :controller do
       end
 
       it 'responses with the book json' do
-        expect(response_body.to_json).to eq BookSerializer.new(
-          book, root: false
-        ).to_json
+        expect(response_body['id']).to eq book.id
       end
 
       it 'responds with 200 status' do
