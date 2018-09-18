@@ -15,7 +15,7 @@ module Api
       private
 
       def book_suggestion_params
-        params.require(:book_suggestion).permit(:title, :author, :link)
+        params.require(:book_suggestion).permit(:title, :author, :link, :user_id)
       end
     end
   end
