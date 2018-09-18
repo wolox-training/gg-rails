@@ -6,10 +6,6 @@ class RentPolicy
     @rent = rent
   end
 
-  def index?
-    user == rent.first.user
-  end
-
   def create?
     user == rent.user
   end

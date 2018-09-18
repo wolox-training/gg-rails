@@ -6,6 +6,7 @@ describe Api::V1::BooksController do
   describe 'GET #index' do
     context 'When fetching all the books' do
       let!(:books) { create_list(:book, 3) }
+      let(:book_id) { ->(book) { book['id'] } }
 
       before do
         get :index
@@ -15,7 +16,7 @@ describe Api::V1::BooksController do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
           books, each_serializer: BookSerializer
         ).to_json
-        expect(response_body.to_json) =~ JSON.parse(expected)
+        expect(response_body['page'].map(&book_id)).to eq JSON.parse(expected).map(&book_id)
       end
 
       it 'responds with 200 status' do
@@ -33,9 +34,10 @@ describe Api::V1::BooksController do
       end
 
       it 'responses with the book json' do
-        expect(response_body.to_json).to eq BookSerializer.new(
+        expected = BookSerializer.new(
           book, root: false
         ).to_json
+        expect(response_body['id']).to eq JSON.parse(expected)['id']
       end
 
       it 'responds with 200 status' do

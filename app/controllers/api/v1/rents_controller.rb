@@ -2,9 +2,7 @@ module Api
   module V1
     class RentsController < ApiController
       def index
-        rents = User.find(user_params).rents
-        authorize rents
-        render_paginated rents
+        render_paginated current_user.rents
       end
 
       def create
