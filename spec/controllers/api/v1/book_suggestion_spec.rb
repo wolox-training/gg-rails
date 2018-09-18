@@ -4,10 +4,10 @@ describe Api::V1::BookSuggestionsController do
   describe 'POST #create' do
     context 'When creating a valid book suggestion' do
       let!(:book_suggestion_attributes) { attributes_for(:book_suggestion) }
+      let(:request) { post :create, params: { book_suggestion: book_suggestion_attributes } }
+
       it 'creates a new book suggestion' do
-        expect do
-          post :create, params: { book_suggestion: book_suggestion_attributes }
-        end.to change { BookSuggestion.count }.by(1)
+        expect { request }.to change { BookSuggestion.count }.by(1)
       end
 
       it 'responds with 201 status' do
@@ -18,14 +18,14 @@ describe Api::V1::BookSuggestionsController do
 
     context 'When creating an invalid book suggestion' do
       let!(:book_suggestion_attributes) { attributes_for(:book_suggestion, title: nil) }
+      let(:request) { post :create, params: { book_suggestion: book_suggestion_attributes } }
+
       before do
         post :create, params: { book_suggestion: book_suggestion_attributes }
       end
 
       it 'doesn\'t create a new book suggestion' do
-        expect do
-          post :create, params: { book_suggestion: book_suggestion_attributes }
-        end.to change { BookSuggestion.count }.by(0)
+        expect { request }.to change { BookSuggestion.count }.by(0)
       end
 
       it 'returns error messages' do
