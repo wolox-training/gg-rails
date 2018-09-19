@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::BookSuggestionsController do
   describe 'POST #create' do
     let(:request) { post :create, params: { book_suggestion: book_suggestion_attributes } }
-    
+
     context 'When creating a valid book suggestion' do
       let!(:book_suggestion_attributes) { attributes_for(:book_suggestion) }
 
