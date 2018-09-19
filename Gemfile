@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rubocop', '~> 0.58.2'
 gem 'devise', '~> 4.5.0'
 gem 'versionist', '~> 1.7.0'
-gem 'jwt', '~> 2.1.0'
+gem 'jwt', '~> 1.5.2'
 gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'wor-paginate', '~> 0.1.3'
@@ -44,6 +44,7 @@ gem 'sidekiq', '~> 5.2.1'
 gem 'slim-rails', '~> 3.1.3'
 gem 'activeadmin', '~> 1.3.1'
 gem 'pundit', '~> 2.0.0'
+gem 'omniauth-google-oauth2', '~> 0.5.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
