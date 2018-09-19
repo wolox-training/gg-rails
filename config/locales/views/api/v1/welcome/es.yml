@@ -1,0 +1,8 @@
+es:
+  api:
+    v1:
+      welcome:
+        index:
+          welcome: Bienvenido
+          sign_in_google: Iniciar sesion con Google
+          sign_out: Cerrar sesion
