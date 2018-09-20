@@ -1,0 +1,8 @@
+en:
+  api:
+    v1:
+      welcome:
+        index:
+          welcome: Welcome
+          sign_in_google: Sign in with Google
+          sign_out: Sign out
