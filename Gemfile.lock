@@ -263,7 +263,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -361,6 +361,7 @@ DEPENDENCIES
   rails (~> 5.1.0)
   rspec-rails (~> 3.7)
   rubocop (~> 0.58.2)
+  rubyzip (~> 1.2.2)
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda-matchers (~> 3.1.2)
