@@ -43,7 +43,9 @@ describe Api::V1::RentsController do
       end
 
       it 'plus rent count in user' do
-        expect(user.reload.rents_count).to equal(1)
+        expect do
+          post :create, params: { user_id: user.id, rent: rent_params }
+        end.to change { user.reload.rents_count }.by(1)
       end
     end
 
@@ -57,7 +59,9 @@ describe Api::V1::RentsController do
       end
 
       it 'does not plus rent count in user' do
-        expect(user.reload.rents_count).to equal(0)
+        expect do
+          post :create, params: { user_id: user.id, rent: other_rent_params }
+        end.to_not change(user.reload, :rents_count)
       end
     end
   end
