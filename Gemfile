@@ -45,6 +45,7 @@ gem 'slim-rails', '~> 3.1.3'
 gem 'activeadmin', '~> 1.3.1'
 gem 'pundit', '~> 2.0.0'
 gem 'omniauth-google-oauth2', '~> 0.5.3'
+gem 'rubyzip', '~> 1.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

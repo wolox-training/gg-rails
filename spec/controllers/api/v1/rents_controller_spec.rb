@@ -41,6 +41,12 @@ describe Api::V1::RentsController do
       it 'responds with 201 status' do
         expect(response).to have_http_status(:created)
       end
+
+      it 'plus rent count in user' do
+        expect do
+          post :create, params: { user_id: user.id, rent: rent_params }
+        end.to change { user.reload.rents_count }.by(1)
+      end
     end
 
     context 'When create a rent with invalid params' do
@@ -50,6 +56,12 @@ describe Api::V1::RentsController do
 
       it 'responds with 401 status' do
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'does not plus rent count in user' do
+        expect do
+          post :create, params: { user_id: user.id, rent: other_rent_params }
+        end.to_not change(user.reload, :rents_count)
       end
     end
   end
